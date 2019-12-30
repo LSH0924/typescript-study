@@ -17,13 +17,18 @@ axios.get(url).then(response => {
   // 혹은
   // const todo: Todo = response.data;
 
-  const ID = todo.id;
+  const id = todo.id;
   const title = todo.title;
-  const finished = todo.completed;
+  const completed = todo.completed;
 
-  console.log(`
-    The Todo with ID: ${ID}
-    Has a title of: ${title}
-    Is it finished? ${finished}
-  `);
+  logTodo(id, title, completed);
 });
+
+// 매개변수의 타입을 명확하게 해 주어야 함
+const logTodo = (id: number, title: string, completed: boolean) => {
+  console.log(`
+    The Todo with ID: ${id}
+    Has a title of: ${title}
+    Is it finished? ${completed}
+  `);
+};
