@@ -46,3 +46,33 @@ let point: {
 const logNumber: (i: number) => void = (i: number) => {
   console.log(i);
 };
+
+// When to use annotations
+// 1) Function that returns the 'any' type
+// 함수의 반환값으로 어떤 Type 이 나올지 모를 때.
+const json = '{"x": 10, "y": 20}';
+
+// any type이 반환되는것은 바람직하지 않기 때문에 명시 해 주어야 한다.
+const cordinates: { x: number; y: number } = JSON.parse(json);
+console.log(cordinates); // {x: 10, y: 20}
+
+// 2) When we declare a variable on one line
+//    and initialize it later
+let words = ['red', 'green', 'blue'];
+let foundWord: boolean;
+
+for (let i = 0; i < words.length; i++) {
+  if (words[i] === 'green') {
+    foundWord = true;
+  }
+}
+
+// 3) Variable whose type cannot be inferred correctly
+let numbers = [-10, -1, 12];
+let numberAboveZero: boolean | number = false;
+
+for (let i = 0; i < numbers.length; i++) {
+  if (numbers[i] > 0) {
+    numberAboveZero = numbers[i];
+  }
+}
