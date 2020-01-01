@@ -20,3 +20,23 @@ let nothing: undefined = undefined;
 
 // 빌트인 객체(javaScript 내장 객체)로도 지정할 수 있음
 let now: Date = new Date();
+
+// Array
+let colors: string[] = ['red', 'green', 'blue'];
+let myNumbers: number[] = [1, 2, 3, 4, 5];
+let truths: boolean[] = [true, true, false];
+
+// Classes
+class Car {}
+// car는 clss Car의 인스턴스
+let car: Car = new Car();
+
+//Object literal
+// 직접 오브젝트 내부 요소의 타입을 지정할 수 있다.
+let point: {
+  x: number;
+  y: number;
+} = {
+  x: 10,
+  y: 20
+};
