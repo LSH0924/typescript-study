@@ -40,3 +40,9 @@ let point: {
   x: 10,
   y: 20
 };
+
+// Function
+// 함수가 받는 매개변수의 타입과 반환값의 타입을 지정할 수 있다.
+const logNumber: (i: number) => void = (i: number) => {
+  console.log(i);
+};
